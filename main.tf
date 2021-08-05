@@ -33,7 +33,13 @@ variable "amis" {
 ## TF Version ##
 ###############
 terraform {
-  required_version = ">= 0.12.28"
+  required_version = "~> 1.0.0"
+  required_providers {
+      aws = {
+        source  = "hashicorp/aws"
+        version = "3.38.0"
+    }
+  }
 }
 
 ###############
@@ -44,7 +50,7 @@ provider "aws" {
     # secret_key = var.aws_secret_key
     region = var.aws_region
     profile = var.aws_profile
-    version = "~> 2.49"
+    # version = "~> 3.38.0"
 }
 
 ###############
