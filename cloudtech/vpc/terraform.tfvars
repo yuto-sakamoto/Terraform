@@ -1,0 +1,7 @@
+aws_profile   = "y-sakamoto"
+aws_region    = "ap-northeast-1"
+cidr_range    = "10.99.0.0/16"
+cidr_public1  = "10.99.10.0/24"
+cidr_public2  = "10.99.11.0/24"
+cidr_private1 = "10.99.20.0/24"
+cidr_private2 = "10.99.21.0/24"
