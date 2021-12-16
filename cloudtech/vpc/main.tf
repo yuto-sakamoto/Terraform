@@ -118,3 +118,18 @@ resource "aws_route_table" "private_route_t" {
     Name = "cloudtech-private-route"
   }
 }
+
+#############
+## ECS ##
+#############
+resource "aws_ecs_cluster" "cloudtech-test-cluster" {
+  name = "cloudtech-cluster"
+  setting {
+    name  = "containerInsights"
+    value = "enabled"
+  }
+  tags = {
+    Name = "cloudtech-cluster-tag"
+  }
+}
+
