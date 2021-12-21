@@ -40,12 +40,26 @@ variable "subnets" {
   }
 }
 ###############
+## Terraform ##
+###############
+terraform {
+  required_version = ">=1.0.0"
+}
+###############
 ## Provider ##
 ###############
 provider "aws" {
   region  = var.aws_region
   profile = var.aws_profile
 }
+
+###############
+## Outputs ##
+###############
+output "cloudtech_resources" {
+  value = aws_vpc.cloudtech_ecs.tags.Name
+}
+
 
 ###############
 ## Resources ##
