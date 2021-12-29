@@ -40,17 +40,12 @@ variable "subnets" {
   }
 }
 ###############
-## Terraform ##
-###############
-terraform {
-  required_version = ">=1.0.0"
-}
-###############
 ## Provider ##
 ###############
 provider "aws" {
   region  = var.aws_region
   profile = var.aws_profile
+  # version = "~> 3.6"
 }
 
 ###############
@@ -66,7 +61,6 @@ output "cloudtech_resources" {
 ###############
 # VPC
 resource "aws_vpc" "cloudtech_ecs" {
-  # id                   = var.vpc_id
   cidr_block           = var.cidr_range
   enable_dns_support   = "true"
   enable_dns_hostnames = "true"
